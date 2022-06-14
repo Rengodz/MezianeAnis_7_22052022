@@ -1,0 +1,14 @@
+const express = require('express');
+const auth = require('../middleware/auth')
+const router = express.Router();
+
+const sauceCtrl = require('../controllers/topics');
+
+router.get('/', auth, topicCtrl.getAllTopics);
+router.post('/', auth, topicCtrl.createTopic);
+router.get('/:id', auth, topicCtrl.getOneTopic);
+router.put('/:id', auth, topicCtrl.modifyTopic);
+router.delete('/:id', auth, topicCtrl.deleteTopic);
+router.post('/:id/like', auth, topicCtrl.likeTopic);
+
+module.exports = router;
