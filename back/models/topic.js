@@ -9,5 +9,4 @@ const topicSchema = mongoose.Schema({
     usersDisliked: { type: Array, required: true },
 });
 
-module.exports = mongoose.model('', topicSchema);
-Topic
+module.exports = mongoose.model('topic', topicSchema);
