@@ -1,5 +1,5 @@
-const Topic = require('../models/Topic');
-const User = require('../models/User');
+const Topic = require('../models/topic');
+const User = require('../models/user');
 
 exports.createTopic = (req, res, next) => {
     console.log(req.body.topic);
@@ -107,7 +107,7 @@ exports.likeTopic = (req, res, next) => {
                 $inc: { dislikes: +1 },
             })
             .then(() =>
-                res.status(200).json({ message: "L'utilisateur dislike lr topic" })
+                res.status(200).json({ message: "L'utilisateur dislike le topic" })
             )
             .catch((error) => res.status(400).json({ error }));
 

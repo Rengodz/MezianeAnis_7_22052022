@@ -1,8 +1,9 @@
 const express = require('express');
-const auth = require('../middleware/auth')
+const auth = require('../middleware/auth');
+const multer = require('../middleware/multer-config');
 const router = express.Router();
 
-const sauceCtrl = require('../controllers/topics');
+const topicCtrl = require('../controllers/topic');
 
 router.get('/', auth, topicCtrl.getAllTopics);
 router.post('/', auth, topicCtrl.createTopic);
