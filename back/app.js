@@ -1,4 +1,5 @@
 const express = require('express');
+const bp = require('body-parser');
 require('dotenv').config({ path: './config/.env' });
 const mongoose = require('mongoose');
 const path = require('path');
@@ -17,7 +18,8 @@ mongoose.connect(process.env.DB_CONFIG, {
 .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-app.use(express.json());
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use((req, res, next) => {

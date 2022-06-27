@@ -2,8 +2,9 @@ const Topic = require('../models/topic');
 const User = require('../models/user');
 
 exports.createTopic = (req, res, next) => {
-    console.log(req.body.topic);
+
     const topicObject = JSON.parse(req.body.topic);
+    console.log(req.body.topic);
     delete topicObject._id;
     const topic = new Topic({
         ...topicObject,
