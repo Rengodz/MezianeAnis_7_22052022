@@ -82,6 +82,31 @@ exports.getAllTopics = (req, res, next) => {
     );
 };
 
+//comment fonction
+
+exports.addComment = (req, res, next) => {
+    let userId = req.body.userId;
+    let topicId = req.params.id;
+    let commentObject = {
+        userComment: req.body.userId,
+        date: req.body.date,
+        content: req.body.comment,
+    }
+}
+
+// userID on comment
+Topic.updateOne({ _id: topicId }, {
+        $push: { commentObject: JSON.parse(req.body.commentObject) },
+
+    })
+    .then(() =>
+        res.status(200).json({ message: "L'utilisateur a posté un commentaire sur le topic" })
+    )
+    .catch((error) => res.status(400).json({ message: "Error occured when updating the topic : " + error }));
+
+
+
+
 // like fonction
 exports.likeTopic = (req, res, next) => {
     let userId = req.body.userId;

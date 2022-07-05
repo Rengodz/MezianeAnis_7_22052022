@@ -38,7 +38,7 @@
     padding-bottom: 50px;
     
   p {
-    background-color:grey;
+    background-color:#1E90FF;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
     text-align: center;
@@ -48,7 +48,7 @@
    }
    
    .input--name {
-    color: green;
+    color: #8FBC8F;
     padding-left: 15px;
     padding-bottom: 10px;
 
@@ -58,7 +58,7 @@
 
 }
    .input--mdp {
-       color: green ;
+       color: #8FBC8F ;
         padding-left: 15px;
         padding-top: 10px;
         :hover
