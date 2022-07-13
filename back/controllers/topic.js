@@ -82,29 +82,30 @@ exports.getAllTopics = (req, res, next) => {
     );
 };
 
-//comment fonction
-
+// add comment to a topic fonction
 exports.addComment = (req, res, next) => {
+    // Retrieve user id and topic from the body
     let userId = req.body.userId;
     let topicId = req.params.id;
+    // Construct specific comment object
     let commentObject = {
-        userComment: req.body.userId,
+        user_id: userId,
         date: req.body.date,
-        content: req.body.comment,
+        content: req.body.content,
     }
+    console.log("userId:" + userId);
+    console.log("topicId:" + topicId);
+    console.log("commentObject:" + commentObject);
+    // Add a comment to the existing topic
+    Topic.updateOne({ _id: topicId }, {
+            $push: { comments: commentObject },
+
+        })
+        .then(() =>
+            res.status(200).json({ message: "User posted a comment to a topic successfully!" })
+        )
+        .catch((error) => res.status(400).json({ message: "Error occured when posting a comment : " + error }));
 }
-
-// userID on comment
-Topic.updateOne({ _id: topicId }, {
-        $push: { commentObject: JSON.parse(req.body.commentObject) },
-
-    })
-    .then(() =>
-        res.status(200).json({ message: "L'utilisateur a posté un commentaire sur le topic" })
-    )
-    .catch((error) => res.status(400).json({ message: "Error occured when updating the topic : " + error }));
-
-
 
 
 // like fonction
