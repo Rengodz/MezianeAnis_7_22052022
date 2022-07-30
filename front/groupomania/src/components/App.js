@@ -1,7 +1,7 @@
 import Banner from './Banner'
 
 function App() {
-    return <Banner / >
+    return <Banner />
 }
 
-export default App;
+export default App
