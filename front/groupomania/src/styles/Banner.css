@@ -1,0 +1,11 @@
+.groupo-banner {
+    color:black;
+    text-align: left;
+    padding: 32px;
+    border-bottom: solid 3px black;
+}
+
+.navbar {
+    color: peru;
+    justify-content: space-between;
+}
