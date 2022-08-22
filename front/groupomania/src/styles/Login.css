@@ -1,10 +1,26 @@
 label{
     color: blue;
+    display: flex;
+    margin: 10px;
 }
 
 .login-card{
     margin:0 auto;
+    margin-top: 15px;
     width:500px;
     border: 4px solid blueviolet;
     border-radius: 10px 10px 10px 10px;
+}
+
+button {
+    margin-top: 10px;
+    margin-left: 400px;
+    margin-bottom: 3px;
+    color: whitesmoke;
+    background-color:rgb(86, 53, 99);
+    border-radius: 10px 10px 10px 10px;
+}
+
+form {
+    margin-left: 10px;
 }

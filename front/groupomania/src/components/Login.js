@@ -3,7 +3,7 @@ import '../styles/Login.css'
 function Login() {
    return<div className='login-card'>
         <form action="" method="post">
-            <h1>Connexion</h1>
+            <h1>Login</h1>
             <div>
                 <label htmlFor="">email</label>
                 <input type="email"/>
